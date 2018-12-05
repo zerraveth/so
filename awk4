@@ -1,0 +1,9 @@
+awk -v n1="$1" -v n2=$2 -F: 'BEGIN {i=0;j=0;N1=n1
+par2=%s\n",N1,N2}
+{if (index($0,N1) !=0) {printf "%-20s
+{if (index($0,N2) !=0) {printf "%-20s
+END {printf "\n\n linii=%s %s - %s %s
+" ";N2=n2 " ";printf "\n par1=%s
+%s\n",$5,$1;i++}}
+%s\n",$5,$1;j++}}
+- %s\n",NR,N1,i,N2,j}' /etc/passwd

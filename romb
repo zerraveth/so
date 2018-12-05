@@ -1,0 +1,41 @@
+#!/bin/bash
+pierwsza()
+{
+	for((i=0;i<$1;i++)) ; do
+		echo -n " "
+	done
+	
+	for((j=0;j<=$2;j++)) ; do
+		echo -n $3
+	done
+}
+druga()
+{
+	for((i=0;i<$1;i++)) ; do
+		echo -n " "
+	done
+	for((j=0;j<$2;j++)) ; do
+		echo -n $3
+	done
+}
+echo -n "odleglosc="
+read odl
+echo -n "znak="
+read zn
+echo -n "wysokosc="
+read h
+m=$h*2-2
+for((k=0;k<$h;k++)) ; do
+	pierwsza odl k $zn
+	pierwsza m k $zn
+	echo
+	m=$[$m-2]
+done
+
+d=2
+for((k=$h-1;k>0;k--)) ; do
+	druga odl k $zn
+	druga d k $zn
+	echo
+	d=$[$d+2]
+done

@@ -1,0 +1,35 @@
+#!/bin/bash
+fun()
+{
+	for((i=0;i<$1;i++)) ; do
+		echo -n " "
+	done
+	
+	for((j=0;j<=$2;j++)) ; do
+		echo -n $3
+	done
+}
+
+echo -n "odleglosc="
+read odl
+echo -n "znak="
+read zn
+echo -n "wysokosc="
+read h
+m=$[$h-1];
+	sp=$[$odl+$m]
+for((k=0;k<$h;k++)) ; do
+
+	il=$[$k*2]
+	fun sp il $zn
+	echo
+	sp=$[$sp-1]
+done
+
+for((k=$h-1;$k>0;k--)) ; do
+	spac=$[$h-$k]
+	ilo=$[$k*2]
+	ilo=$[$ilo-2]
+	fun spac ilo $zn
+	echo
+done

@@ -1,0 +1,26 @@
+#!/bin/bash
+fun(){
+	for((i=0;i<$1;i++)) ; do
+		echo -n " "
+	done
+	
+	for((j=0;j<=$2;j++)) ; do
+		echo -n $3
+	done
+}
+
+
+h=$1
+echo -n "podaj znak: "
+read znak
+st=0
+for (( ;$h>0 ;h-- )) ; do
+	for((k=$h;$k>0;k--)) ; do
+		spac=$[$h-$k+$st]
+		ilo=$[$k*2]
+		ilo=$[$ilo-2]
+		fun spac ilo $znak
+		echo
+	done
+	st=$[$st+1]
+done

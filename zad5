@@ -1,0 +1,20 @@
+#!/bin/bash
+echo "liczba parametrów $#"
+while [ $1 ]
+do
+	if [ -f  $1 ]
+	then
+		if [ -r $1 ]
+		then
+		cat $1
+		fi
+	fi
+	if [ -d $1 ]
+	then
+		if [ -r $1 ]
+		then
+		ls -l $1
+		fi
+	fi
+shift
+done

@@ -1,0 +1,16 @@
+#!/bin/bash
+plik=$1
+max=$2
+
+
+for (( ; ; )) ; do
+echo -n "kategoria: "
+read kat
+if [ -z "$kat" ]
+then
+	break
+else
+awk 'BEGIN { licz=0; } /'$kat'/ { if($3>0 && $4<'$max'){ print $2" "$4; licz++;} } END { print "wybranych pozycji: "licz;  }' $1
+fi
+
+done

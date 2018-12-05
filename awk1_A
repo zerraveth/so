@@ -1,0 +1,12 @@
+#!/bin/bash
+produkt=$1
+
+echo -n podaj minimalna:
+read minimalna
+echo -n podaj maksymalna:
+read maksymalna
+awk -v produkt=$produkt -v maksymalna=$maksymalna -v minimalna=$minimalna '{if($2==produkt && $3>0 && ($4<maksymalna && $4>minimalna) && maksymalna>0 && minimalna>0) printf $1 " " $2 " " $4 "\n"; else printf "koniec";}' dane
+
+
+
+awk -v produkt=$produkt -v maksymalna=$maksymalna -v minimalna=$minimalna 'BEGIN {ilosc=0} {if($2==produkt && $3>0 && ($4<maksymalna && $4>minimalna) && maksymalna>0 && minimalna>0) ilosc++} END {printf("wybranych pozycji: %s\n",ilosc)}' dane

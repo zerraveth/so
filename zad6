@@ -1,0 +1,11 @@
+#!/bin/bash
+plik=$1
+
+
+echo -n "dzien: "
+read dzien
+
+awk 'BEGIN { suma=0; } /'$dzien'/ {  suma=$3+$5; if(suma>$2){ print "czas relaksu jest wiekszy";} else { print "czas pracy jest wiekszy"} }' $1
+dzien="brak"
+awk -v dzien=$dzien 'BEGIN {min=999;} {if(min>$5){min=$5; dzien=$1}} END {print "najmniejszy aktywnosc "min" "dzien;}' $1
+

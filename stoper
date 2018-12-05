@@ -1,0 +1,14 @@
+#!/bin/bash
+stoper=$1
+n=$2 
+iloczyn=1
+for ((i=0 ;$i<$n;i++ )) ; do
+echo -n "podaj liczbe: "
+read liczba;
+iloczyn=$[$iloczyn*$liczba]
+if (( $liczba == $stoper )) ; then
+break
+fi
+
+done
+echo "iloczyn: $iloczyn"

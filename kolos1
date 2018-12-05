@@ -1,0 +1,25 @@
+#!/bin/bash
+draw()
+{
+	for((i=0;i<$1;i++)) ; do
+		echo -n " "
+	done
+	
+	for((i=0;i<2*$2-1;i++)) ; do
+		echo -n $3
+	done
+}
+echo -n "odleglosc ="
+read odl
+echo -n "znak ="
+read znak
+echo -n "wysokosc="
+read wysokosc
+m=0
+for (( k=$wysokosc;k>=0;k-- )) ; do
+	draw odl k $zn
+	draw m k $zn
+	echo
+	odl=$[ $old+1 ]
+	m=$[ $m+2 ]
+done

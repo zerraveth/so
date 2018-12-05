@@ -1,0 +1,23 @@
+#!/bin/bash
+echo "Podaj wysokosc: "
+read wysokosc
+echo "Podaj ilosc choinek "
+read ilosc
+echo "podaj znak"
+read znak;
+
+for ((i=0;$i<$wysokosc;i++ )) ; do
+
+	for (( p=0; $p<ilosc ;p++ )) ; do	
+		for (( j=0; $j<$wysokosc-$i-1 ; j++ )) ; do
+			printf " "
+		done
+		for (( k=0; $k<(2*$i)+1 ; k++ )) ; do
+			printf "%s" "$znak"
+		done
+		for (( j=0; $j<$wysokosc-$i ; j++ )) ; do
+			printf " "
+		done
+	done
+			echo ""
+done

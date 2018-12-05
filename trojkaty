@@ -1,0 +1,26 @@
+#!/bin/bash
+fun(){
+	for ((i=0 ; $i<=$1 ; i++ )) ; do
+		echo -n $2
+	done
+	echo -n " "
+	for ((  i=0 ; $i<$3 ; i++ )) ; do
+		echo -n $2
+	done
+	echo -n "  "
+}
+
+znak="X"
+wysokosc=$1
+liczba=2
+read znak
+read liczba
+for (( j=0 ;$j<$wysokosc; j++ )) ; do
+	wys=$[$wysokosc-$j]
+	
+	for (( k=0; $k<$liczba ; k++ )) ; do 
+			fun j $znak wys
+	done
+
+	echo 
+done
